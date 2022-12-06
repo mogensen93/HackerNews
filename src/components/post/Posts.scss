@@ -1,0 +1,19 @@
+$breakpoint-tablet: 800px;
+$breakpoint-big-screen: 1920px;
+
+.posts-container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  column-gap: 10px;
+  row-gap: 15px;
+}
+@media (min-width: $breakpoint-big-screen) {
+  .posts-container {
+    grid-template-columns: 1fr 1fr;
+
+  }
+}
+
