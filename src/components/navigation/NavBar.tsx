@@ -13,7 +13,7 @@ export default function NavBar() {
       </div>
       <div className="navbar-links-container">
         <a href="https://github.com/HackerNews/API">API docs</a>
-        <a href="https://github.com/mogensen93/React-Typescript">Github</a>
+        <a href="https://github.com/mogensen93/HackerNews">Github</a>
         <a href="https://www.linkedin.com/in/rasmus-mogensen-8104b2114/">LinkedIn</a>
       </div>
     </div>
