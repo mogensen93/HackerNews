@@ -1,4 +1,4 @@
-$breakpoint: 800px;
+$breakpoint-tablet: 800px;
 $general-border-radius: 4px;
 
 .post-card-container {
@@ -60,25 +60,25 @@ $general-border-radius: 4px;
             margin-left:4px;
         }
     }
+
     .post-card-cta-button:hover {
         background-color: rgb(59, 130, 246);
         color:#ffffff;
         transition-duration: .25s;
         transform: scale(1.02);
-    }
 
-    .post-card-cta-button:hover .post-card-cta-img {
-        filter: invert(1);
-        transition: .25s;
+        .post-card-cta-img {
+            filter: invert(1);
+            transition: .25s;
+        }
     }
-
 }
 .post-card-container:hover{
     box-shadow: 0px 4px 4px .1px rgba(0,0,0,0.5);
     transition: .25s;
 }
 
-@media (max-width: $breakpoint) {
+@media (max-width: $breakpoint-tablet) {
     .post-card-container {
         display:block;
         border: 1px solid rgb(199, 199, 199);

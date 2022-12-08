@@ -50,8 +50,7 @@ export default function Posts() {
   
     function sortPostsByScore(posts: any){
       console.log("3: Sort posts")
-      console.log(posts)
-  
+
       posts.sort((a: Post, b: Post) => {
         return b.score - a.score;
       });

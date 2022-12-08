@@ -18,8 +18,8 @@ export default function PostTile(props: Props) {
 
   useEffect(() => {
 
-    async function getKarmaScore() {
-      fetch(`https://hacker-news.firebaseio.com/v0/user/${props.author}.json`)
+    async function getKarmaScore(author:string) {
+      fetch(`https://hacker-news.firebaseio.com/v0/user/${author}.json`)
         .then((response) => response.json())
         .then((data) => {
           setKarmaScore(data.karma);
@@ -29,13 +29,13 @@ export default function PostTile(props: Props) {
         });
     }
 
-    function convertUnixTime(){
-      var date = new Date(props.time * 1000);
+    function convertUnixTime(unixTime:number){
+      var date = new Date(unixTime * 1000);
       setDate(date.toLocaleDateString("default"));
     }
 
-    convertUnixTime();
-    getKarmaScore();
+    convertUnixTime(props.time);
+    getKarmaScore(props.author);
   }, [props.time, props.author]);
 
 
