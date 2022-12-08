@@ -19,19 +19,15 @@ interface Ids {
 }
 
 export default function Posts() {
-
   const [posts, setPosts] = useState<Post | null >(null);
+
   useEffect(() => {
    fetchPostIds();
   }, []);
 
-  async function fetchPostIds(){
-    console.log("1: Fetch Ids")
-
+  function fetchPostIds(){
     async function fetchPosts(ids:Ids[]) {
-    
       const arrayOfPosts: {}[] = [];
-      console.log("2: Fetch posts")
       for (const id of ids) {
         await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
           .then((response) => response.json())
@@ -49,8 +45,6 @@ export default function Posts() {
     }
   
     function sortPostsByScore(posts: any){
-      console.log("3: Sort posts")
-
       posts.sort((a: Post, b: Post) => {
         return b.score - a.score;
       });
